@@ -2,28 +2,23 @@ package com.company.Title_665;
 
 public class Solution {
     public boolean checkPossibility(int[] nums) {
-        boolean result = true;
-        if (nums == null || nums.length <= 2){
-            return result;
-        }
-        int temp = 0;
+        int count = 0;
         for (int i = 0; i < nums.length - 1; i ++){
-            if (nums[i] > nums[i + 1]){
-                int left, right;
-                left = (i > 0) ? nums[i - 1] : nums[i];
-                right = i + 2 < nums.length ? nums[i + 2] : nums[i + 1];
-
-
-                if (temp == 1){
-                    result = false;
-                    break;
+            if (nums[i] <= nums[i + 1]){
+                continue;
+            }
+            count ++;
+            if (i == 0){
+                nums[i] = nums[i + 1];
+            } else {
+                if (nums[i - 1] > nums[i + 1]){
+                    nums[i + 1] = nums[i];
+                } else {
+                    nums[i] = nums[i + 1];
                 }
-                nums[i + 1] = (i > 0) ? nums[i] : nums[i + 1];
-                i --;
-                temp = 1;
             }
         }
-        return result;
+        return count < 2;
     }
 
     public static void main(String[] args) {
