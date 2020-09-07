@@ -1,4 +1,4 @@
-package com.company.title_8_2;
+package com.company.Title_8_2;
 //请你来实现一个 atoi 函数，使其能将字符串转换成整数。
 //
 // 首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。接下来的转化规则如下：
